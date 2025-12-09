@@ -1,0 +1,34 @@
+#definir relacion para One to Many
+
+newbook = Book(title="Harry Potter 1", rating =5, author=newauthor)
+
+# Buscar dede Books, autores:
+
+books_by_rowling = Book.objects.filter (auhtor__last_name="Rowling")
+books_by_rowling = Book.objects.filter (auhtor__last_name__contains="ling")
+
+# To look for books that relate to an author
+
+author_var = Auhtor.objects.get(first_name="J.K.")
+
+book_set
+En One to One no hace falta el '_set'
+# Este comando pone en minúscula el nombre de la clase y agrega '_set'
+jkr.book_set.all()
+
+Otra opciom es agregar el nombre de la relacion en la tabla Book
+ej: Author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name=<nombre_rel><i.e. books>, null=True)
+
+bash: makemigrations
+bash: migrate
+
+jkr = Auhtor.objects.get(first_name="J.K.")
+jkr.<nombre_rel>.all()
+jkr.books.all()
+jkr.books.filter(rating__gt=3)
+jkr.books.get(asdfadf)
+jkr.books.filter(asdfasdf).filter(asdfasdf)
+
+___________
+
+Revisar el capitulo 115 por las Circular Relations and Lazy Relations or Models with other apps

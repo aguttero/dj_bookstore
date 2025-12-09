@@ -1,4 +1,2 @@
 .DS_Store
-book_store/book_store/__pycache__
-book_store/book_outlet/__pycache__
-book_store/book_outlet/migrations/__pycache__
+__pycache__

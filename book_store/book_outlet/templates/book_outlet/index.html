@@ -11,7 +11,7 @@
       {% comment %} Alternate way 
       Needs to setup def get_absolute_url(self) in Models.py Book Class and import reverse in models.py
       {% endcomment %}
-      <a href="{{ book.get_absolute_url }}">{{ book.title }} </a> Autor: {{ book.author}} (Rating: {{ book.rating}})
+      <a href="{{ book.get_absolute_url }}">{{ book.title }} </a> Autor: {{ book.author}} (Rating: {{ book.rating}} - Slug: {{ book.slug }})
 
       {% comment %} 
       <a href=" {% url "book_detail_url" book.id %} ">{{ book.title }} </a> Autor: {{ book.author}} (Rating: {{ book.rating}}) 
@@ -19,4 +19,9 @@
     </li>
     {% endfor %}
   </ul>
+  <hr>
+  <p>
+    Total Number of Books: {{ total_books }} <br/>
+    Average rating: {{ average_rating.rating__avg }}
+  </p>
 {% endblock body %}
